@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-controller="myController">
+        {{name}}
+        <div ng-controller="otherController">
+            {{name}}
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="../20161110/ng-include/lib/angular.js"></script>
+<script>
+//    <!--链式结构中的controller是平级的-->
+    angular.module('app',[])
+            .controller('myController',function ($scope) {
+                $scope.name='范围1';
+    })
+            .controller('otherController',function ($scope) {
+//                $scope.name='范围2';
+            });
+
+</script>
